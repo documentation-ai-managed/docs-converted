@@ -1,0 +1,118 @@
+---
+title: Changelog
+description: Stay updated with the latest releases, features, and improvements in Converted.
+---
+
+## Recent Releases
+
+<Callout kind="info">
+Follow this changelog to track new features, bug fixes, and important updates for Converted's documentation platform. Check back regularly or subscribe to notifications.
+</Callout>
+
+<Update label="2024-10-15" description="v1.2.0" tags={["feature", "improvement"]}>
+## New Features
+
+- Added CRO Test Significance Calculator integration directly in the documentation editor
+- Introduced real-time collaboration for project documentation teams
+- New resource links to Converted's performance marketing guides
+
+## Improvements
+
+- Enhanced search functionality with better relevance scoring
+- Optimized page load times by `>30%` for large documentation sites
+- Updated UI components with brand color `#42C1F0` support
+
+## Bug Fixes
+
+- Fixed rendering issues with nested code blocks
+- Resolved mobile responsiveness problems in tabbed interfaces
+</Update>
+
+<Update label="2024-09-20" description="v1.1.0" tags={["bugfix", "security"]}>
+## Security Updates
+
+- Patched potential XSS vulnerabilities in user-generated content
+- Improved authentication token handling
+
+## Bug Fixes
+
+- Corrected ParamField rendering for API documentation parameters
+- Fixed Mermaid diagram parsing errors in complex flowcharts
+
+## Improvements
+
+- Better error handling for invalid MDX syntax during previews
+- Added keyboard navigation support for Steps and Tabs components
+</Update>
+
+<Update label="2024-08-10" description="v1.0.0" tags={["feature", "breaking"]}>
+## New Features
+
+- Initial release of the MDX Documentation Starter Kit
+- Full support for 15+ components including Update, Steps, and CodeGroup
+- Integrated with Converted's conversion resources and calculators
+
+## Breaking Changes
+
+- Removed legacy H1 heading support; always start with H2
+- Updated attribute syntax to require double quotes for strings
+
+## Migration Notes
+
+```bash
+# Update your config
+npm install converted-docs@1.0.0
+```
+
+Review your frontmatter and component usage for compliance.
+</Update>
+
+## Migration Guide
+
+If you encounter breaking changes from v1.0.0, follow these steps to update your documentation:
+
+<Steps>
+  <Step title="Backup Your Site" icon="database">
+    Export your current MDX files to a safe location.
+  </Step>
+  <Step title="Update Dependencies" icon="package">
+    <CodeGroup tabs="npm,yarn">
+    ````bash
+    npm install converted-docs@latest
+    ````
+    ````bash
+    yarn add converted-docs@latest
+    ````
+    </CodeGroup>
+  </Step>
+  <Step title="Scan for H1 Headings" icon="search">
+    Replace any `# Heading` with `## Heading` throughout your files.
+  </Step>
+  <Step title="Test Parsing" icon="play">
+    Run your build command and fix any syntax errors.
+  </Step>
+</Steps>
+
+<Callout kind="alert">
+Breaking changes are rare but documented here. Always test in a staging environment before production.
+</Callout>
+
+## Upcoming Roadmap
+
+<Expandable title="Preview Future Features" default-open="false">
+- Enhanced CRO Test Duration Calculator embed
+- AI-powered documentation suggestions
+- Native support for eCommerce agency case studies
+- Advanced analytics for documentation usage
+
+Stay tuned for v1.3.0 in November 2024.
+</Expandable>
+
+<Columns cols={2}>
+  <Card title="Conversion Resources" icon="book-open" href="https://converted.co.uk/conversion-resources/">
+    Access calculators and guides for CRO testing.
+  </Card>
+  <Card title="Get in Touch" icon="mail" href="https://converted.co.uk/contact-us/">
+    Questions? Contact the Converted team.
+  </Card>
+</Columns>

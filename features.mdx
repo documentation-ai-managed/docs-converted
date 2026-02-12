@@ -1,0 +1,153 @@
+---
+title: Core Features of Converted
+description: Learn about the essential tools and capabilities for effective documentation management in Converted.
+---
+
+## Overview
+
+Converted provides a comprehensive suite of tools for creating, collaborating on, and managing your documentation. You get intuitive editing interfaces, real-time collaboration, robust version control, powerful search capabilities, and flexible export options. These features help teams maintain high-quality docs efficiently.
+
+<Columns cols={3}>
+  <Card title="Rich Editing" icon="edit-3" href="#document-creation">
+    Create and format documents with markdown, embeds, and custom components.
+  </Card>
+  <Card title="Team Collaboration" icon="users" href="#collaboration">
+    Edit in real-time with multiple users and resolve conflicts seamlessly.
+  </Card>
+  <Card title="Version Control" icon="git-branch" href="#version-history">
+    Track changes, compare versions, and rollback to previous states.
+  </Card>
+</Columns>
+
+<Columns cols={2}>
+  <Card title="Smart Search" icon="search" href="#search-organization">
+    Find content quickly across your entire documentation space.
+  </Card>
+  <Card title="Export & Share" icon="share-2" href="#export-sharing">
+    Publish docs as PDFs, HTML, or shareable links.
+  </Card>
+</Columns>
+
+## Document Creation and Editing Tools
+
+Start new documents from templates or blank pages. The editor supports markdown, code blocks, tables, and embedded components like images and videos.
+
+<Steps>
+  <Step title="Create a New Document" icon="plus">
+    Navigate to your workspace and select `New Document`. Choose a template for API docs, guides, or blogs.
+  </Step>
+  <Step title="Edit Content">
+````markdown
+# Welcome to My Docs
+
+## Quick Start
+
+Install via npm:
+
+```bash
+npm install my-package
+```
+````
+  </Step>
+  <Step title="Preview Changes" icon="eye">
+    Toggle live preview to see formatted output instantly.
+  </Step>
+</Steps>
+
+<Callout kind="tip">
+Use keyboard shortcuts like `Cmd/Ctrl + B` for bold and `Cmd/Ctrl + K` for links to speed up editing.
+</Callout>
+
+## Collaboration and Real-time Editing
+
+Invite team members to co-edit documents simultaneously. Changes appear live with user cursors and presence indicators.
+
+<Tabs>
+  <Tab title="Invite Collaborators" icon="user-plus">
+    In document settings, add emails or workspace members. Set permissions to view, edit, or admin.
+  </Tab>
+  <Tab title="Real-time Cursors">
+    See who is editing what. Resolve conflicts with inline suggestions.
+  </Tab>
+  <Tab title="Comments & Mentions">
+    Add `@username` to notify team members. Threaded discussions keep feedback organized.
+  </Tab>
+</Tabs>
+
+## Version History and Rollback
+
+Every change creates an automatic version. View diffs, restore points, or branch documents.
+
+<Expandable title="How to Rollback" default-open="true">
+  1. Open the document menu.
+  2. Select `Version History`.
+  3. Pick a version and click `Restore`.
+
+  Compare changes side-by-side:
+
+  ```diff
+  + Added new feature description
+  - Removed outdated API endpoint
+    Unchanged configuration remains.
+  ```
+</Expandable>
+
+<CodeGroup tabs="CLI,API">
+```bash
+converted versions list --doc-id=123
+converted versions restore --doc-id=123 --version=abc123
+```
+```javascript
+const versions = await converted.versions.list({ docId: '123' });
+await converted.versions.restore({ docId: '123', versionId: 'abc123' });
+```
+</CodeGroup>
+
+## Search and Organization Features
+
+Organize docs with folders, tags, and full-text search. Query across titles, content, and metadata.
+
+| Feature | Description |
+|---------|-------------|
+| Global Search | Finds matches in seconds across all docs. |
+| Tags | Add custom labels like `api`, `guide`. Filter by multiple tags. |
+| Folders | Nested structure for projects and teams. |
+
+<Callout kind="info">
+Advanced search supports operators: `"exact phrase"`, `tag:api`, `updated>2024-01-01`.
+</Callout>
+
+## Export and Sharing Options
+
+Share docs publicly or privately. Export to PDF, HTML, Markdown, or JSON.
+
+<Steps>
+  <Step title="Generate Share Link">
+    Click `Share` and toggle public access. Copy the link: `https://docs.converted.co.uk/share/abc123`.
+  </Step>
+  <Step title="Export Formats">
+    Select `Export` > Choose PDF for print or HTML for web embedding.
+  </Step>
+</Steps>
+
+<Expandable title="Embed in Websites">
+  Use this iframe code:
+
+````html
+<iframe src="https://docs.converted.co.uk/embed/abc123" width="100%" height="600"></iframe>
+````
+
+</Expandable>
+
+## Next Steps
+
+Explore these resources to get started:
+
+<Columns cols={2}>
+  <Card title="Quickstart Guide" icon="rocket" href="/quickstart">
+    Set up your first workspace.
+  </Card>
+  <Card title="Authentication" icon="shield" href="/authentication">
+    Secure your docs with API keys.
+  </Card>
+</Columns>
